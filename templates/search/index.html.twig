@@ -15,9 +15,7 @@
                     {% endif %}
                     {{ item.volumeInfo.pageCount }}
                     {% if  item.volumeInfo.authors.0 is defined %}
-                        {% for author in item.volumeInfo.authors.0 %}
-                            {{ author }}
-                        {% endfor %}
+                        {{ item.volumeInfo.authors.0 }}
                     {% else %}
                         Auteur inconnu
                     {% endif %}
