@@ -12,9 +12,9 @@ class SearchController extends AbstractController
     #[Route('/search', name: 'search')]
     public function index(BooksApiService $booksApiService): Response
     {
-        dd($booksApiService->getBooks());
+//     dd($booksApiService->getBooks());
         return $this->render('search/index.html.twig', [
-            'controller_name' => 'SearchController',
+            'data' => $booksApiService->getBooks(),
         ]);
     }
 }

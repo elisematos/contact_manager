@@ -18,7 +18,12 @@ class BooksApiService
     public function getBooks(): array {
         $response = $this->client->request(
             'GET',
-            'https://www.googleapis.com/books/v1/volumes?q=+inauthor:keyes&key=' .BooksApiService::API_KEY
+            'https://www.googleapis.com/books/v1/volumes?', [
+                'query' => [
+                    'q' => 'mousquetaire',
+                    'key' => BooksApiService::API_KEY
+                    ]
+            ]
         );
         return $response->toArray();
     }
